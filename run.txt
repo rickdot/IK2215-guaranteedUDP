@@ -1,0 +1,18 @@
+VSRecv:
+-d -o 6666
+
+VSSend:
+-d 127.0.0.1:6666 111.txt
+
+-d debug
+-o overwrite
+
+java -jar receiver_no_loss.jar -o 6666
+
+java -jar receiver_with_loss.jar -o 6666
+
+java -jar receiver_nothing.jar -o 6666
+
+java -jar sender_no_loss.jar 127.0.0.1:6666 send.txt
+
+java -jar sender_with_loss.jar 127.0.0.1:6666 send.txt
